@@ -1,9 +1,18 @@
 {
-  "name": "ecommerce-common",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ecom-common",
+  "version": "0.0.1",
+  "description": "Shared types, schemas and event definitions for the ecommerce microservices",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "pnpm build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
