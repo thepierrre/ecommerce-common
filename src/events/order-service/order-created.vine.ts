@@ -1,5 +1,5 @@
 import vine from "@vinejs/vine";
-import { OrderItemSchema } from "../../domain/order/order-item";
+import { OrderItemSchema } from "../../domain/order/order-item.vine";
 
 export const OrderCreatedEventSchema = vine.object({
   schemaVersion: vine.literal(1),
