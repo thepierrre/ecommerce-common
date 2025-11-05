@@ -1,5 +1,5 @@
 {
-  "name": "ecom-common",
+  "name": "@thepierrre/ecom-common",
   "version": "0.0.1",
   "description": "Shared types, schemas and event definitions for the ecommerce microservices",
   "publishConfig": {
