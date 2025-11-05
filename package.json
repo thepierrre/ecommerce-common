@@ -1,6 +1,6 @@
 {
   "name": "@thepierrre/ecom-common",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Shared types, schemas and event definitions for the ecommerce microservices",
   "publishConfig": { "registry": "https://npm.pkg.github.com" },
   "type": "module",
