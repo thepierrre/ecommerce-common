@@ -1,3 +1,13 @@
-export const OrderStatuses = ["PROCESSING", "PICKED", "SHIPPED", "DELIVERED", "REJECTED", "RETURN_INITIATED"] as const;
+import vine from "@vinejs/vine"
+import { Infer } from "@vinejs/vine/build/src/types"
 
-export type OrderStatus = (typeof OrderStatuses)[number];
+export const OrderStatusSchema = vine.enum([
+  "PROCESSING",
+  "PICKED",
+  "SHIPPED",
+  "DELIVERED",
+  "REJECTED",
+  "RETURN_INITIATED",
+] as const)
+
+export type OrderStatus = Infer<typeof OrderStatusSchema>

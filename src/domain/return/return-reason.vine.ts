@@ -1,0 +1,14 @@
+import vine from "@vinejs/vine"
+import { Infer } from "@vinejs/vine/build/src/types"
+
+export const ReturnReasonSchema = vine.enum([
+  "WRONG_ITEM_RECEIVED",
+  "DEFECTIVE_OR_BROKEN",
+  "NOT_AS_DESCRIBED",
+  "CHANGED_MIND",
+  "ORDERED_BY_MISTAKE",
+  "FOUND_BETTER_ALTERNATIVE",
+  "NO_REASON_PROVIDED",
+] as const)
+
+export type ReturnReason = Infer<typeof ReturnReasonSchema>

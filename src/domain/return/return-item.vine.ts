@@ -1,4 +1,5 @@
 import vine from "@vinejs/vine";
+import { Infer } from "@vinejs/vine/build/src/types";
 
 export const ReturnItemSchema = vine.object({
   productId: vine.string(),
@@ -10,3 +11,4 @@ export const ReturnItemSchema = vine.object({
   rejectionReason: vine.string().nullable(),
 });
 
+export type ReturnItem = Infer<typeof ReturnItemSchema>

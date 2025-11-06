@@ -1,5 +1,6 @@
 import vine from "@vinejs/vine";
-import { ReturnItemSchema } from "../../domain/return/return-item.vine";
+import { ReturnItemSchema } from "../../../domain/return/return-item.vine";
+import { Infer } from "@vinejs/vine/build/src/types";
 
 export const ReturnCompletedEventSchema = vine.object({
     schemaVersion: vine.literal(1),
@@ -12,3 +13,5 @@ export const ReturnCompletedEventSchema = vine.object({
     reason: vine.string().nullable(),
     items: vine.array(ReturnItemSchema),
 })
+
+export type ReturnCompletedEvent = Infer<typeof ReturnCompletedEventSchema>;
