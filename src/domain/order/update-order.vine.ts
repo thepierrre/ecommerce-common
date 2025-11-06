@@ -1,11 +1,13 @@
 import vine from "@vinejs/vine";
 import { Infer } from "@vinejs/vine/build/src/types";
-import { OrderStatusSchema } from "./order-status";
+import { OrderStatusBuilder } from "./order-status";
 
-export const UpdateOrderSchema = vine.object({
+const UpdateOrderBuilder = vine.object({
 	contactEmail: vine.string().email().nullable(),
 	shippingAddress: vine.string().nullable(),
-	status: OrderStatusSchema.nullable(),
+	status: OrderStatusBuilder.nullable(),
 });
 
-export type UpdateOrder = Infer<typeof UpdateOrderSchema>;
+export const UpdateOrderSchema = vine.compile(UpdateOrderBuilder);
+
+export type UpdateOrder = Infer<typeof UpdateOrderBuilder>;

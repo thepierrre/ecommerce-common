@@ -1,7 +1,7 @@
 import vine from "@vinejs/vine"
 import { Infer } from "@vinejs/vine/build/src/types"
 
-export const OrderStatusSchema = vine.enum([
+export const OrderStatusBuilder = vine.enum([
   "PROCESSING",
   "PICKED",
   "SHIPPED",
@@ -10,4 +10,6 @@ export const OrderStatusSchema = vine.enum([
   "RETURN_INITIATED",
 ] as const)
 
-export type OrderStatus = Infer<typeof OrderStatusSchema>
+export const OrderStatusSchema = vine.compile(OrderStatusBuilder)
+
+export type OrderStatus = Infer<typeof OrderStatusBuilder>

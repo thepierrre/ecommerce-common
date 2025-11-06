@@ -1,7 +1,7 @@
 import vine from "@vinejs/vine"
 import { Infer } from "@vinejs/vine/build/src/types"
 
-export const OrderOutForDeliveryEventSchema = vine.object({
+export const OrderOutForDeliveryEventBuilder = vine.object({
   schemaVersion: vine.literal(1),
   eventId: vine.string().uuid(),
   occurredAt: vine.date({ formats: ["iso"] }),
@@ -9,4 +9,6 @@ export const OrderOutForDeliveryEventSchema = vine.object({
   orderNumber: vine.string(),
 })
 
-export type OrderOutForDeliveryEvent = Infer<typeof OrderOutForDeliveryEventSchema>
+export const OrderOutForDeliveryEventSchema = vine.compile(OrderOutForDeliveryEventBuilder);
+
+export type OrderOutForDeliveryEvent = Infer<typeof OrderOutForDeliveryEventBuilder>
