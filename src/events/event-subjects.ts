@@ -6,6 +6,7 @@ export const WAREHOUSE_ORDER_ACCEPTED_SUBJECT = "warehouse.order.accepted.v1";
 export const WAREHOUSE_ORDER_PICKED_SUBJECT = "warehouse.order.picked.v1";
 export const WAREHOUSE_ORDER_REJECTED_SUBJECT = "warehouse.order.rejected.v1";
 export const WAREHOUSE_ORDER_SHIPPED_SUBJECT = "warehouse.order.shipped.v1";
+export const WAREHOUSE_ORDER_PROCESSING_STARTED_SUBJECT = "warehouse.order.processing-started.v1";
 
 export const WAREHOUSE_RETURN_ACCEPTED_SUBJECT = "warehouse.return.accepted.v1";
 export const WAREHOUSE_RETURN_REJECTED_SUBJECT = "warehouse.return.rejected.v1";
