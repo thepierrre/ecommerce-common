@@ -1,6 +1,6 @@
 import vine from "@vinejs/vine";
 import { Infer } from "@vinejs/vine/build/src/types";
-import { OrderStatusBuilder } from "./order-status";
+import { OrderStatusBuilder } from "./order-status.vine";
 
 const UpdateOrderBuilder = vine.object({
 	contactEmail: vine.string().email().nullable(),
