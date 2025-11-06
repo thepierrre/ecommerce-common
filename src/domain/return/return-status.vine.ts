@@ -1,5 +1,3 @@
-
-
 import vine from "@vinejs/vine"
 import { Infer } from "@vinejs/vine/build/src/types"
 
@@ -9,4 +7,4 @@ export const ReturnStatusSchema = vine.enum([
   "RECEIVED",
 ] as const)
 
-export type OrderStatus = Infer<typeof ReturnStatusSchema>
+export type ReturnStatus = Infer<typeof ReturnStatusSchema>

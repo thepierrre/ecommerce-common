@@ -1,4 +1,5 @@
 import vine from "@vinejs/vine";
+import { Infer } from "@vinejs/vine/build/src/types";
 
 export const OrderRejectedEventSchema = vine.object({
     schemaVersion: vine.literal(1),
@@ -8,3 +9,5 @@ export const OrderRejectedEventSchema = vine.object({
     orderNumber: vine.string(),
     reason: vine.string(),
 })
+
+export type OrderRejectedEvent = Infer<typeof OrderRejectedEventSchema>;

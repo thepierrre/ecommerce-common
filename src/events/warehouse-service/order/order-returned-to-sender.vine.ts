@@ -8,4 +8,5 @@ export const OrderReturnedToSenderEventSchema = vine.object({
   returnedAt: vine.date({ formats: ["iso"] }),
   orderNumber: vine.string(),
 })
+
 export type OrderReturnedToSenderEvent = Infer<typeof OrderReturnedToSenderEventSchema>
