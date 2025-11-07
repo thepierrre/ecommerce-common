@@ -10,6 +10,8 @@ export const WAREHOUSE_ORDER_PROCESSING_STARTED_SUBJECT = "warehouse.order.proce
 
 export const WAREHOUSE_RETURN_ACCEPTED_SUBJECT = "warehouse.return.accepted.v1";
 export const WAREHOUSE_RETURN_REJECTED_SUBJECT = "warehouse.return.rejected.v1";
+export const WAREHOUSE_RETURN_COMPLETED_SUBJECT = "warehouse.return.completed.v1";
+export const WAREHOUSE_RETURN_RECEIVED_SUBJECT = "warehouse.return.received.v1";
 
 /* ----------------------------------------------------------------------------
    CARRIER events

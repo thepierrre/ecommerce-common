@@ -1,5 +1,5 @@
 import vine from "@vinejs/vine";
-import { ReturnItemBuilder, ReturnItemSchema } from "../../../domain/return/return-item.vine";
+import { ReturnItemBuilder } from "../../../domain/return/return-item.vine";
 import { Infer } from "@vinejs/vine/build/src/types";
 
 export const ReturnCompletedEventBuilder = vine.object({
