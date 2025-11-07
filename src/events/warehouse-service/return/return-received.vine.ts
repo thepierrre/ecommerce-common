@@ -1,5 +1,15 @@
 import vine from "@vinejs/vine";
-import { Infer } from "@vinejs/vine/build/src/types";
+import { ReturnItem, ReturnItemBuilder } from "src/domain";
+
+export type ReturnReceivedEvent = {
+  schemaVersion: 1
+  eventId: string
+  occurredAt: string
+  receivedAt: string
+  returnNumber: string
+  orderNumber: string
+  items: ReturnItem[]
+}
 
 export const ReturnReceivedEventBuilder = vine.object({
     schemaVersion: vine.literal(1),
@@ -8,8 +18,7 @@ export const ReturnReceivedEventBuilder = vine.object({
     receivedAt: vine.date({ formats: ["iso"] }),
     returnNumber: vine.string(),
     orderNumber: vine.string(),
+     items: vine.array(ReturnItemBuilder),
 })
 
 export const ReturnReceivedEventSchema = vine.compile(ReturnReceivedEventBuilder);
-
-export type ReturnReceivedEvent = Infer<typeof ReturnReceivedEventBuilder>;

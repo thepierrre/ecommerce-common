@@ -1,5 +1,13 @@
 import vine from "@vinejs/vine";
-import { Infer } from "@vinejs/vine/build/src/types";
+
+export type ReturnRejectedEvent = {
+  schemaVersion: 1
+  eventId: string
+  occurredAt: string
+  returnNumber: string
+  orderNumber: string
+  reason: string | null
+}
 
 export const ReturnRejectedEventBuilder = vine.object({
     schemaVersion: vine.literal(1),
@@ -11,5 +19,3 @@ export const ReturnRejectedEventBuilder = vine.object({
 })
 
 export const ReturnRejectedEventSchema = vine.compile(ReturnRejectedEventBuilder);
-
-export type ReturnRejectedEvent = Infer<typeof ReturnRejectedEventBuilder>;

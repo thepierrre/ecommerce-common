@@ -1,5 +1,6 @@
 import vine from "@vinejs/vine"
-import { Infer } from "@vinejs/vine/build/src/types"
+
+export type ReturnStatus = "OPEN" | "COMPLETED" | "RECEIVED"
 
 export const ReturnStatusBuilder= vine.enum([
   "OPEN",
@@ -8,5 +9,3 @@ export const ReturnStatusBuilder= vine.enum([
 ] as const)
 
 export const ReturnStatusSchema = vine.compile(ReturnStatusBuilder);
-
-export type ReturnStatus = Infer<typeof ReturnStatusBuilder>

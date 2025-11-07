@@ -1,5 +1,14 @@
 import vine from "@vinejs/vine";
-import { Infer } from "@vinejs/vine/build/src/types";
+
+export type ReturnItem = {
+  productId: string
+  sku: string
+  quantityReturned: number
+  quantityAccepted: number
+  quantityRejected: number
+  quantityRestocked: number
+  rejectionReason: string | null
+}
 
 export const ReturnItemBuilder = vine.object({
   productId: vine.string(),
@@ -12,5 +21,3 @@ export const ReturnItemBuilder = vine.object({
 });
 
 export const ReturnItemSchema = vine.compile(ReturnItemBuilder);
-
-export type ReturnItem = Infer<typeof ReturnItemBuilder>

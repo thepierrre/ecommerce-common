@@ -1,5 +1,12 @@
 import vine from "@vinejs/vine";
-import { Infer } from "@vinejs/vine/build/src/types";
+
+export type OrderAcceptedEvent = {
+  schemaVersion: 1
+  eventId: string
+  occurredAt: string
+  acceptedAt: string
+  orderNumber: string
+}
 
 export const OrderAcceptedEventBuilder = vine.object({
     schemaVersion: vine.literal(1),
@@ -10,5 +17,3 @@ export const OrderAcceptedEventBuilder = vine.object({
 })
 
 export const OrderAcceptedEventSchema = vine.compile(OrderAcceptedEventBuilder);
-
-export type OrderAcceptedEvent = Infer<typeof OrderAcceptedEventBuilder>;

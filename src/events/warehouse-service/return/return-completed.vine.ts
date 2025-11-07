@@ -1,6 +1,17 @@
 import vine from "@vinejs/vine";
-import { ReturnItemBuilder } from "../../../domain/return/return-item.vine";
-import { Infer } from "@vinejs/vine/build/src/types";
+import { ReturnItem, ReturnItemBuilder } from "../../../domain/return/return-item.vine";
+
+export type ReturnCompletedEvent = {
+  schemaVersion: 1
+  eventId: string
+  occurredAt: string
+  completedAt: string
+  returnNumber: string
+  orderNumber: string
+  disposition: "accepted" | "partially_accepted" | "rejected"
+  reason: string | null
+  items: ReturnItem[]
+}
 
 export const ReturnCompletedEventBuilder = vine.object({
     schemaVersion: vine.literal(1),
@@ -15,5 +26,3 @@ export const ReturnCompletedEventBuilder = vine.object({
 })
 
 export const ReturnCompletedEventSchema = vine.compile(ReturnCompletedEventBuilder);
-
-export type ReturnCompletedEvent = Infer<typeof ReturnCompletedEventBuilder>;
