@@ -8,7 +8,8 @@ export type OrderPickedEvent = {
   pickedAt: string
   pickerId: string | null
   weightKg: number | null
-  shippingAddress: [number, number, number] | null
+  shippingAddress: string
+  dimensionsCm: [number, number, number] | null
 }
 
 export const OrderPickedEventBuilder = vine.object({
@@ -19,7 +20,8 @@ export const OrderPickedEventBuilder = vine.object({
   pickedAt: vine.date({ formats: ["iso"] }),
   pickerId: vine.string().nullable(),
   weightKg: vine.number().nullable(),
-  shippingAddress: vine.tuple([vine.number(), vine.number(), vine.number()]).nullable(),
+  shippingAddress: vine.string(),
+  dimensionsCm: vine.tuple([vine.number(), vine.number(), vine.number()]).nullable(),
 });
 
 export const OrderPickedEventSchema = vine.compile(OrderPickedEventBuilder);
